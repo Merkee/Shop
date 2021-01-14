@@ -1,0 +1,27 @@
+.Contacts{
+    margin: 25px 10%;
+    font-family: 'Playfair Display', serif;
+}
+
+.PhonesBox{
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.Title img{
+    display: block;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+}
+
+.Title h2{
+    font-size: 20pt;
+    text-align: center;
+}
+
+.Phones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

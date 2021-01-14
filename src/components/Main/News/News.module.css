@@ -1,0 +1,16 @@
+.News{
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+}
+
+.News h2{
+    font-family: 'Alegreya', serif;
+    font-size: 20pt;
+}
+  
+.News p{
+    font-family: 'Playfair Display', serif;
+    text-indent: 20px;
+    font-size: 12pt;
+}

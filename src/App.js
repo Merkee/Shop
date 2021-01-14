@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import logo from './logo_gasp.png';
 import './App.css';
 
-function App() {
+import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+
+import Header from './components/Header/Header';
+import Nav from './components/Nav/Nav';
+import Main from './components/Main/Main';
+import Catalog from './components/Catalog/Catalog';
+import Footer from './components/Footer/Footer';
+import Contacts from './components/Contacts/Contacts';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header/>
+        <Nav/>
+        <div className="ContentWrapper">
+          <Route path="/Main" component={Main}/>
+          <Route path="/Catalog" component={Catalog}/>
+          <Route path="/Contacts" component={Contacts}/>
+        </div>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,32 @@
+.Category{
+    grid-area: c;
+    font-family: 'Raleway', sans-serif;
+    padding: 25px;
+    font-size: 14pt;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.SideTittle{
+    font-weight: bold;
+}
+
+.Category ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul.CategoryBox{
+    margin: 20px 0;
+}
+
+.CostBox{
+    font-size: 14pt;
+    width: 50px;
+    margin: 0 5px;
+    border-radius: 5px;
+    line-height: 1rem;
+    border: none;
+    background-color: rgb(231, 231, 231);
+}

@@ -1,0 +1,57 @@
+.Nav {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(69, 67, 62);
+    border-top: 2.5px solid rgb(201, 188, 115);
+    border-bottom: 2.5px solid rgb(201, 188, 115);
+    font-size: 16pt;
+}
+
+.NavInner {
+    display: grid;
+    grid-template-areas: "mi ml";
+    grid-template-rows: auto;
+    grid-template-columns: 10fr 2fr;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.MenuItems {
+    grid-area: mi;
+}
+
+.MenuLogg {
+    grid-area: ml;
+}
+
+ul.Menu {
+    padding: 0;
+}
+
+ul.Log {
+    padding: 0;
+}
+
+.NavInner ul li {
+    padding: 15px;
+    display: inline;
+}
+
+.Nav ul li:hover {
+    background-color: rgb(90, 87, 81);
+}
+
+.Nav a {
+    color: white;
+    text-decoration: none;
+}
+
+a.active {
+    color: rgb(201, 188, 115);
+}

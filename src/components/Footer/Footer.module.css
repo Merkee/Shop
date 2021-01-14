@@ -1,0 +1,10 @@
+.Footer{
+    background-color: rgb(182, 178, 172);
+    height: 100px;
+}
+  
+.Copyring{
+    font-family: 'Playfair Display', serif;
+    padding-top: 20px;
+    text-align: center;
+}

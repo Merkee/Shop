@@ -1,0 +1,20 @@
+.Catalog{
+    margin: 25px 10%;
+    display: grid;
+    grid-template-areas: 
+    "c s"
+    "c p";
+    grid-template-columns: 2fr 8fr;
+    grid-gap: 15px;
+}
+
+.Products{
+    /*background-color: rgb(236, 236, 236);*/
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    grid-area: p;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2px;
+}
