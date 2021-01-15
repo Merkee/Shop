@@ -4,6 +4,7 @@
   background-color: rgb(255, 255, 255);
   display: grid;
   grid-template-rows: 3fr 2fr 1fr;
+  font-family: 'Spectral', serif;
 }
 
 .ProductFrame:hover{
@@ -11,14 +12,12 @@
 }
 
 p.Name{
-  font-family: 'Playfair Display', serif;
   font-size: 12pt;
   margin: auto 3px;
   text-align: center;
 }
   
 p.Cost{
-  font-family: 'Playfair Display', serif;
   font-size: 12pt;
   margin: 3px;
   text-align: center;

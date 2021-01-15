@@ -5,12 +5,10 @@
 }
 
 .News h2{
-    font-family: 'Alegreya', serif;
     font-size: 20pt;
 }
   
 .News p{
-    font-family: 'Playfair Display', serif;
     text-indent: 20px;
     font-size: 12pt;
 }
