@@ -1,0 +1,38 @@
+.TitleBlock{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  
+    text-align: center;
+    background-image: url("./header.jpg");
+    background-repeat: no-repeat;
+    /**/
+    background-size: cover;
+    background-position: center center; 
+    background-attachment: fixed; 
+    background-color: #f4f5b6; 
+    /**/
+    text-transform: uppercase;
+    line-height: 0.25;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    color: white;
+}
+  
+.TittleBG{
+    background-color: rgba(0, 0, 0, 0.575);
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+  
+.Tittle{
+    font-size: 50pt;
+    font-family: 'Philosopher', sans-serif;
+}
+  
+.SubTittle{
+    font-family: 'Raleway', sans-serif;
+}

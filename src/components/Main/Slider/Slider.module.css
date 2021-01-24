@@ -1,0 +1,49 @@
+.Slider{
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.SliderTrack{
+    display: flex;
+    transition: 2s;
+}
+
+.SliderItem{
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.SliderItem:nth-child(1){
+    background: linear-gradient(90deg, rgba(3,59,10,1) 0%, rgba(9,121,24,1) 65%, rgba(35,149,51,1) 91%);
+}
+
+.SliderItem:nth-child(2){
+    background: linear-gradient(90deg, rgba(3,59,10,1) 0%, rgba(9,121,24,1) 65%, rgba(35,149,51,1) 91%);
+}
+
+.SliderItem:nth-child(3){
+    background: linear-gradient(90deg, rgba(3,59,10,1) 0%, rgba(9,121,24,1) 65%, rgba(35,149,51,1) 91%);
+}
+
+.SliderItem:nth-child(4){
+    background: linear-gradient(90deg, rgba(3,59,10,1) 0%, rgba(9,121,24,1) 65%, rgba(35,149,51,1) 91%);
+}
+
+.SliderItem:nth-child(5){
+    background: linear-gradient(90deg, rgba(3,59,10,1) 0%, rgba(9,121,24,1) 65%, rgba(35,149,51,1) 91%);
+}
+
+.Title{
+    padding: 0 70px 0 100px;
+    color: rgb(255, 255, 255);
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+.SubTitle{
+    padding: 0 70px 0 100px;
+    color: rgb(255, 255, 255);
+    font-size: 25pt;
+}

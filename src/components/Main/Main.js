@@ -1,4 +1,4 @@
-import SOffer from './SOffer/SOffer';
+import Slider from './Slider/Slider';
 import News from './News/News';
 
 import style from './Main.module.css';

@@ -1,0 +1,63 @@
+.AboutUs{
+    margin: 25px 0;
+    font-family: 'Spectral', serif;
+    display: grid;
+    grid-template-areas:
+    "about about about"
+    "qual exp divers";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.About{
+    grid-area: about;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.About h2{
+    font-size: 20pt;
+}
+  
+.AboutUs p{
+    text-indent: 20px;
+    font-size: 14pt;
+}
+
+.AboutUs span{
+    font-size: 14pt;
+}
+
+.Title h2{
+    font-size: 18pt;
+    text-align: center;
+}
+
+.Title img{
+    display: block;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+}
+
+.Quality{
+    grid-area: qual;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.Experience{
+    grid-area: exp;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.Diversity{
+    grid-area: divers;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}

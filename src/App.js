@@ -5,22 +5,32 @@ import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 import Header from './components/Header/Header';
-import Nav from './components/Nav/Nav';
 import Main from './components/Main/Main';
 import Catalog from './components/Catalog/Catalog';
 import Footer from './components/Footer/Footer';
 import Contacts from './components/Contacts/Contacts';
+import AboutUs from './components/AboutUs/AboutUs';
+import TitleBlock from './components/TitleBlock/TitleBlock';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="App">
+        <TitleBlock/>
         <Header/>
-        <Nav/>
-        <div className="ContentWrapper">
-          <Route path="/Main" component={Main}/>
-          <Route path="/Catalog" component={Catalog}/>
-          <Route path="/Contacts" component={Contacts}/>
+        <div className="Content">
+          <Route path="/Main">
+            <Main/>
+          </Route>
+          <Route path="/Catalog">
+            <Catalog productData={props.productData}/>
+          </Route>
+          <Route path="/Contacts">
+            <Contacts/>
+          </Route>
+          <Route path="/AboutUs">
+            <AboutUs/>
+          </Route>
         </div>
         <Footer/>
       </div>

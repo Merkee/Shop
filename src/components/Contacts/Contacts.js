@@ -1,46 +1,136 @@
 import style from './Contacts.module.css';
-import ph from './Phones.png';
+import sls from './Sales.png';
+import dlvr from './Delivery.png';
+import spl from './Supply.png';
+import ps from './Personnel.png';
+import ph from './Phone.png';
 
 let Contacts = () => {
     return(
         <div className={style.Contacts}>
-            <div className={style.PhonesBox}>
-                <div className={style.Title}>
-                    <h2>Отдел продаж</h2>
+            <div className={style.Phones}>
+                <div className={style.Sales}>
+                    <div className={style.Title}>
+                        <img src={sls}/>
+                        <h2>Отдел продаж</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            <div className={style.TitlePhones}>Отдел сбыта</div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div className={style.TitlePhones}>Отдел маркетинга</div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div className={style.TitlePhones}>Начальник отдела продаж</div>
+                            <div className={style.Description}>Стома Марина Вячеславовна</div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div className={style.TitlePhones}>Национальный менеджер по продажам</div>
+                            <div className={style.Description}>Феминист Анна Георгиевна</div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div className={style.TitlePhones}>Первый зам.директора (по экономике и маркетингу)</div>
+                            <div className={style.Description}>Сачевичик Анна Мечеславовна</div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div className={style.TitlePhones}>Начальник отдела внешнеэкономической деятельности</div>
+                            <div className={style.Description}>Василевич Алла Григорьевна</div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                        </li>
+                    </ul>                    
                 </div>
-                <div className={style.Phones}>
-                    <div className={style.PhonesGrid}>
+                <div className={style.Delivery}>
+                    <div className={style.Title}>
+                        <img src={dlvr}/>
+                        <h2>Отдел доставки</h2>
+                    </div>
                         <ul>
                             <li>
-                                <div className={style.TitlePhones}>Отдел сбыта</div>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <div className={style.Description}>Менеджер по закупке</div>
+                                <div className={style.PhoneNums}>
+                                    <img src={ph}/>
+                                    <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                </div>
+                                <div className={style.PhoneNums}>
+                                    <img src={ph}/>
+                                    <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                </div>
+                                <div className={style.PhoneNums}>
+                                    <img src={ph}/>
+                                    <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                </div>
                             </li>
-                            <li>
-                                <div className={style.TitlePhones}>Отдел маркетинга</div>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
-                            </li>
-                            <li>
-                                <div className={style.TitlePhones}>Начальник отдела продаж</div>
-                                <div className={style.FIO}>Стома Марина Вячеславовна</div>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
-                            </li>
-                            <li>
-                                <div className={style.TitlePhones}>Национальный менеджер по продажам</div>
-                                <div className={style.FIO}>Феминист Анна Георгиевна</div>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
-                            </li>
-                            <li>
-                                <div className={style.TitlePhones}>Первый зам.директора (по экономике и маркетингу)</div>
-                                <div className={style.FIO}>Сачевичик Анна Мечеславовна</div>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
-                            </li>
-                            <li>
-                                <div className={style.TitlePhones}>Начальник отдела внешнеэкономической деятельности</div>
-                                <div className={style.FIO}>Василевич Алла Григорьевна</div>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
-                            </li>
-                        </ul>                    
+                        </ul>
+                </div>
+                <div className={style.Supply}>
+                    <div className={style.Title}>
+                        <img src={spl}/>
+                        <h2>Отдел снабжения</h2>
                     </div>
+                    <ul>
+                        <li>
+                            <div className={style.Description}>Телефоны для заказа продукции</div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div className={style.Personnel}>
+                    <div className={style.Title}>
+                        <img src={ps}/>
+                        <h2>Отдел кадров</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            <div className={style.Description}>Телефоны отдела кадров</div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                            <div className={style.PhoneNums}>
+                                <img src={ph}/>
+                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

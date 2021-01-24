@@ -4,7 +4,10 @@
 }
   
 .Copyring{
-    font-family: 'Playfair Display', serif;
-    padding-top: 20px;
+    color: rgb(66, 66, 66);
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
     text-align: center;
+    font-family: 'Playfair Display', serif;
 }

@@ -13,7 +13,7 @@
     font-family: 'Raleway', sans-serif;
     margin-right: 20px;
     padding: 0 15px;
-    font-size: 20pt;
+    font-size: 16pt;
     border-radius: 5px;
     border: none;
     background-color: rgb(231, 231, 231);
@@ -21,8 +21,9 @@
 
 .SortSelect{
     font-family: 'Raleway', sans-serif;
-    font-size: 20pt;
+    font-size: 16pt;
     border-radius: 5px;
+    padding: 5px 15px;
     border: none;
     background-color: rgb(231, 231, 231);
 }

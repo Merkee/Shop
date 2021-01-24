@@ -1,11 +1,11 @@
 .Catalog{
-    margin: 25px 10%;
+    margin: 25px 0;
     display: grid;
     grid-template-areas: 
     "c s"
     "c p";
     grid-template-columns: 2fr 8fr;
-    grid-gap: 15px;
+    grid-gap: 20px;
 }
 
 .Products{

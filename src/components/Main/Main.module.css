@@ -1,4 +1,6 @@
 .Main{
+    display: grid;
+    grid-gap: 20px;
     font-family: 'Spectral', serif;
-    margin: 25px 10%;
+    margin: 25px 0;
 }

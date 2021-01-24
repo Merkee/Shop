@@ -1,32 +1,90 @@
 .Contacts{
-    margin: 25px 10%;
+    margin: 25px 0;
     font-family: 'Spectral', serif;
 }
 
-.PhonesBox{
+.Phones{
+    display: grid;
+    grid-template-areas:
+    "sel sel sel"
+    "del sup adm";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.Sales{
+    grid-area: sel;
     padding: 25px;
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
 }
 
-.Title img{
+.Delivery{
+    grid-area: del;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.Supply{
+    grid-area: sup;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.Personnel{
+    grid-area: adm;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.Title h2{
+    font-size: 18pt;
+    text-align: center;
+}
+
+.Sales .Title img{
     display: block;
     margin: auto;
     width: 120px;
     height: 120px;
 }
 
-.Title h2{
-    font-size: 20pt;
-    text-align: center;
+.Delivery .Title img{
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
 }
 
-.Phones{
+.Supply .Title img{
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.Personnel .Title img{
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.PhoneNums img{
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
 }
 
 .Phones ul{
-    font-size: 18px;
+    font-size: 14pt;
     list-style-type: none;
+}
+
+.Sales ul{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -35,7 +93,7 @@
     font-weight: bold;
 }
 
-.FIO{
+.Description{
     color: rgb(128, 128, 128);
 }
 

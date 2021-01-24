@@ -4,5 +4,12 @@
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  overflow: hidden; /*Чтобы не появлялся скролл в бок*/
+  /*overflow: hidden; Чтобы не появлялся скролл в бок*/
 }
+
+.Content{
+  width: 1200px;
+  margin: 0px auto;
+}
+
+input:focus{outline:none;}
