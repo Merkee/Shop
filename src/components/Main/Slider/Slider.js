@@ -1,14 +1,22 @@
+import { React } from 'react';
 import style from './Slider.module.css';
 import flr from './flour.png';
-import { Component } from 'react';
 
-class Slider extends Component {
+const Slider = () => {
 
-    render(){
+    let sliderElement = React.createRef();
+    let sliderTrackElement = React.createRef();
+    let sliderItemElement = React.createRef();
+    const itemsCount = 5;
+    const itemWidth = sliderElement.current.clientWidth;
+    const movePosition = itemWidth;
+
+    sliderItemElement.current.style.minWidth = `${itemWidth}px`;
+
         return(
-            <div className={style.Slider}>
-            <div className={style.SliderTrack}>
-                <div className={style.SliderItem}>
+            <div ref={sliderElement} className={style.Slider}>
+            <div ref={sliderTrackElement} className={style.SliderTrack}>
+                <div ref={sliderItemElement} className={style.SliderItem}>
                     <div className={style.Description}>
                         <div className={style.Title}>Мука</div>
                         <div className={style.SubTitle}>Мука «Гаспадар» всех марок и сортов.</div>
@@ -46,7 +54,6 @@ class Slider extends Component {
             </div>
         </div>
         );
-    }
 }
 
 export default Slider;
