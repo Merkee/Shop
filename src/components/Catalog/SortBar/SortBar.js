@@ -1,9 +1,17 @@
 import style from './SortBar.module.css';
 
-const SortBar = () => {
+import React, {Component} from 'react';
+
+let searchElement = React.createRef();
+
+let searchProduct = () => {
+    alert(searchElement.current.value);
+}
+
+const SortBar = (props) => {
     return(
         <div className={style.SortBar}>
-            <input type="textarea" placeholder="Поиск продукции" className={style.SearchBar}/>
+            <input type="textarea" ref={searchElement} onChange={searchProduct} placeholder="Поиск продукции" className={style.SearchBar}/>
             <div className={style.SelectBox}>
                 <span>Сортировать по </span>
                 <select className={style.SortSelect}>

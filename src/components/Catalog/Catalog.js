@@ -9,7 +9,7 @@ const Catalog = (props) => {
 
     return(
       <div className={style.Catalog}>
-        <SortBar/>
+        <SortBar productData={props.productData}/>
         <Category/>
         <div className={style.Products}>
           {productElements}
