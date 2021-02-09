@@ -35,7 +35,6 @@ app.get('/selectProducts', async (req, res, next) => {
 
   let result = await productData.arr();
   res.json(result);
-  connection.end();
 });
 
 

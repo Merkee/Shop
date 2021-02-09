@@ -17,11 +17,6 @@ let state = {
       ]
 }
 
-/*let s = fetch('http://localhost:4000/selectproducts')
-  .then(async (res) => {
-    return res.json();
-});*/
-
 /*let gs = async () => {
   let response = await fetch("/selectproducts");
   let data = await response.json();
@@ -29,9 +24,5 @@ let state = {
 }
 
 gs();*/
-
-/*try{
-  gs();
-} catch(e) { console.log(e); }*/
 
 export default state;
