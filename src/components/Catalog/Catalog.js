@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import style from './Catalog.module.css';
 import Category from './Category/Category';
 import ProductFrame from './ProductFrame/ProductFrame';
@@ -6,19 +6,20 @@ import SortBar from './SortBar/SortBar';
 
 const Catalog = (props) => {
 
-  let gs = async () => {
-    let response = await fetch("/selectproducts");
-    let data = await response.json();
-    let productElements = data.map( p => <ProductFrame image={p.image} name={p.name} oldcost={p.discount} cost={p.cost}/>);
-    return productElements;
-  }
+  const [product, setProduct] = useState([]);
+  const gs = useCallback(async () => {
+      const response = await fetch("/selectProducts");
+      const data = await response.json();
+      setProduct(data);
+  })
 
-  const [state, setState] = useState();
-  setState(gs());
+  useEffect(() => {
+    gs();
+  }, [gs])
 
-  console.log(state);
+  console.log(product);
 
-  let productElements = props.productData.map( p => <ProductFrame image={p.img} name={p.name} oldcost={p.oldcost} cost={p.cost}/>);
+  let productElements = product.map( p => <ProductFrame image={p.image} name={p.name} oldcost={p.discount} cost={p.cost}/>);
 
     return(
       <div className={style.Catalog}>

@@ -4,7 +4,6 @@ import img3 from './Wheat_flour_premium_grade_M_54-25.jpg';
 import img4 from './Wheat_flour_1_grade_М_36-30.jpg';
 import img5 from './Wheat_flour_1_grade_М_36-27.jpg';
 import img6 from './Wheat_flour_2_grade_М_12-25.jpg';
-import { response } from 'express';
 
 let state = {
     data: [],
@@ -23,13 +22,13 @@ let state = {
     return res.json();
 });*/
 
-let gs = async () => {
+/*let gs = async () => {
   let response = await fetch("/selectproducts");
   let data = await response.json();
   console.log(data);
 }
 
-gs();
+gs();*/
 
 /*try{
   gs();
