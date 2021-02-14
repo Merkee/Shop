@@ -37,7 +37,6 @@ app.get('/selectProducts', async (req, res, next) => {
   res.json(result);
 });
 
-
 //res.send(res.json(result));
 
 app.listen(4000, () => {

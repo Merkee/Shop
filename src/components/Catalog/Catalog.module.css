@@ -5,6 +5,7 @@
     "c s"
     "c p";
     grid-template-columns: 2fr 8fr;
+    grid-template-rows: 1fr 14fr;
     grid-gap: 20px;
 }
 
