@@ -4,16 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import thunk from 'redux-thunk';
-import state from './redux/state.js';
 import { applyMiddleware, createStore } from 'redux';
 import { rootReducer } from './redux/rootReducer';
 import { Provider } from 'react-redux';
+import { initProducts } from './redux/actions';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
-
+store.dispatch(initProducts());
 const app = (
   <Provider store={store}>
-    <App state={state}/>
+    <App/>
   </Provider>
 );
 

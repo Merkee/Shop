@@ -1,4 +1,12 @@
-import { GET_ALL } from "./types";
+import { GET_ALL, INIT } from "./types";
+
+export const initProducts = () => {
+  return async dispatch => {
+    const response = await fetch("/selectProducts");
+    const json = await response.json();
+    dispatch({type: INIT, payload: json});
+  }
+}
 
 export const getAllProducts = () => {
     return async dispatch => {

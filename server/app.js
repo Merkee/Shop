@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
-  
+const bodyParser = require('body-parser');
+
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -17,6 +18,7 @@ const connection = mysql.createConnection({
   res.send('Step 2');
   console.log('Step 2');
 });*/
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/selectProducts', async (req, res, next) => {
   let productData = {};
@@ -29,12 +31,16 @@ app.get('/selectProducts', async (req, res, next) => {
         } else {
           return resolve(rows);
         }
-      })
+      });
     })
   }
-
   let result = await productData.arr();
   res.json(result);
+});
+
+app.post('/filterProducts', (req, res, next) => {
+  const type = req.body.type;
+  res.send(type);
 });
 
 //res.send(res.json(result));

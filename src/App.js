@@ -23,7 +23,7 @@ const App = (props) => {
             <Main/>
           </Route>
           <Route path="/Catalog">
-            <Catalog productData={props.state.productData}/>
+            <Catalog/>
           </Route>
           <Route path="/Contacts">
             <Contacts/>
