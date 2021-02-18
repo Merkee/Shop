@@ -1,17 +1,19 @@
 import style from './SortBar.module.css';
 
-import React, {Component} from 'react';
-
-let searchElement = React.createRef();
-
-let searchProduct = () => {
-    alert(searchElement.current.value);
-}
+import React, {useState} from 'react';
+import { getSearch } from '../../../redux/actions';
+import { connect } from 'react-redux';
 
 const SortBar = (props) => {
+    /*dispatch(getAllProducts())*/
+    //(e) => {setSearch(e.target.value); dispatch(getSearch(search))}
+    const changeHandler = (e) => {
+        const value = e.target.value;
+        props.getSearch(value);
+    }
     return(
         <div className={style.SortBar}>
-            <input type="textarea" ref={searchElement} onChange={searchProduct} placeholder="Поиск продукции" className={style.SearchBar}/>
+            <input type="textarea" onChange={changeHandler} placeholder="Поиск продукции" className={style.SearchBar}/>
             <div className={style.SelectBox}>
                 <span>Сортировать по </span>
                 <select className={style.SortSelect}>
@@ -23,4 +25,6 @@ const SortBar = (props) => {
     );
 }
 
-export default SortBar;
+const mapDispatchToProps = {getSearch};
+
+export default connect(null, mapDispatchToProps)(SortBar);
