@@ -3,25 +3,17 @@ import { GET_ALL, GET_SEARCH, INIT } from "./types";
 
 export const initProducts = () => {
   return async dispatch => {
-    return axios.get("/selectProducts")
-    .then(({data}) => {
-      dispatch({type: INIT, payload: data});
-    });
+    const response = await axios.get("/selectProducts");
+    dispatch({type: INIT, payload: response.data});
   }
 }
 
 export const getSearch = (reqSearch) => {
   return async dispatch => {
-    /*return axios.post("/getSearch", {
-      search: reqSearch
-    })
-    .then(({data}) => {
-      dispatch({type: GET_SEARCH, payload: data});
-    });*/
     const response = await axios.post("/getSearch", {
       search: reqSearch
     });
-    dispatch({type: INIT, payload: response.data});
+    dispatch({type: GET_SEARCH, payload: response.data});
   }
 }
 

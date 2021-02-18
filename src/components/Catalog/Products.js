@@ -1,10 +1,10 @@
 import { useCallback, useEffect } from "react";
 import {connect, useDispatch, useSelector } from "react-redux"
-import { getAllProducts } from "../../redux/actions";
+import { getAllProducts, initProducts } from "../../redux/actions";
 import ProductFrame from "./ProductFrame/ProductFrame"
 
-const Products = ({getAllProducts, productsData}) => {
-    useEffect(() => {getAllProducts()}, [getAllProducts]);
+const Products = ({initProducts, productsData}) => {
+    useEffect(() => {initProducts()}, [initProducts]);
     const products = productsData.products;
     if(!products.length){
         return <p>Продукция не найдена.</p>
@@ -13,6 +13,6 @@ const Products = ({getAllProducts, productsData}) => {
 }
 
 const mapStateToProps = (state) => state;
-const mapDispatchToProps = {getAllProducts}; 
+const mapDispatchToProps = {initProducts}; 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
