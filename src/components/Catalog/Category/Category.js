@@ -1,14 +1,18 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
+import { connect } from 'react-redux';
+import { getTypes } from '../../../redux/actions';
 
 import style from './Category.module.css';
 
-const Category = () => {
+const Category = (props) => {
 
-  let sortElement = React.createRef();
-
-  let getSortType = () => {
-    let checked = sortElement.current.checked;
-    alert(checked);
+  let select = ""; 
+  let changeHandler = (e) => {
+    if(select == ""){
+      select = `WHERE \`type\` = '${e.target.value}'`;
+    } else select+= ` OR type = '${e.target.value}'`;
+    const value = select;
+    props.getTypes(value);
   }
 
     return(
@@ -16,12 +20,11 @@ const Category = () => {
           <ul>
             <li><div className={style.SideTittle}><span>Каталог</span></div>
               <ul className={style.CategoryBox}>
-                <li><input ref={sortElement} onChange={getSortType} type="checkbox"/>все</li>
-                <li><input type="checkbox"/>мука</li>
-                <li><input type="checkbox"/>мучные полуфабрикаты</li>
-                <li><input type="checkbox"/>крупы</li>
-                <li><input type="checkbox"/>здоровое питание</li>
-                <li><input type="checkbox"/>комбикорма</li>
+                <li><input type="checkbox" value="Мука" onChange={changeHandler}/>мука</li>
+                <li><input type="checkbox" value="Мучные полуфабрикаты" onChange={changeHandler}/>мучные полуфабрикаты</li>
+                <li><input type="checkbox" value="Крупы" onChange={changeHandler}/>крупы</li>
+                <li><input type="checkbox" value="Здоровое питание" onChange={changeHandler}/>здоровое питание</li>
+                <li><input type="checkbox" value="Комбикорма" onChange={changeHandler}/>комбикорма</li>
               </ul>
             </li>
             <li><div className={style.SideTittle}><span>Стоимость</span></div>
@@ -35,4 +38,6 @@ const Category = () => {
     );
 }
 
-export default Category;
+const mapDispatchToProps = {getTypes};
+
+export default connect(null, mapDispatchToProps)(Category);

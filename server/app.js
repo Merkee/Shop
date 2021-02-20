@@ -58,6 +58,25 @@ app.post('/getSearch', async (req, res) => {
   res.json(result);
 });
 
+app.post('/getTypes', async (req, res) => {
+  const types = req.body.types;
+  let productData = {};
+
+  productData.arr = () => {
+    return new Promise((resolve, reject) => {
+      connection.query('SELECT `id`, `name`, `image`, `cost`, `discount` FROM `products` ' + types, (err, rows) => {
+        if(err) {
+          return(reject);
+        } else {
+          return resolve(rows);
+        }
+      });
+    })
+  }
+  let result = await productData.arr();
+  res.json(result);
+});
+
 //res.send(res.json(result));
 
 app.listen(4000, () => {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ALL, GET_SEARCH, INIT } from "./types";
+import { GET_ALL, GET_SEARCH, GET_TYPES, INIT } from "./types";
 
 export const initProducts = () => {
   return async dispatch => {
@@ -14,6 +14,15 @@ export const getSearch = (reqSearch) => {
       search: reqSearch
     });
     dispatch({type: GET_SEARCH, payload: response.data});
+  }
+}
+
+export const getTypes = (reqTypes) => {
+  return async dispatch => {
+    const response = await axios.post("/getTypes", {
+      types: reqTypes
+    });
+    dispatch({type: GET_TYPES, payload: response.data});
   }
 }
 
