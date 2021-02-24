@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer';
 import Contacts from './components/Contacts/Contacts';
 import AboutUs from './components/AboutUs/AboutUs';
 import TitleBlock from './components/TitleBlock/TitleBlock';
+import LogIn from './components/LogIn/LogIn';
 
 const App = (props) => {
   return (
@@ -30,6 +31,9 @@ const App = (props) => {
           </Route>
           <Route path="/AboutUs">
             <AboutUs/>
+          </Route>
+          <Route path="/LogIn">
+            <LogIn/>
           </Route>
         </div>
         <Footer/>

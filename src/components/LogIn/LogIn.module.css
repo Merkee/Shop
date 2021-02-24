@@ -1,0 +1,28 @@
+.LogIn{
+    font-family: 'Spectral', serif;
+    margin: 25px;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 5px;
+    height: 1000px;
+}
+
+.AuthForm{
+    margin-top: 0 auto;
+}
+
+.InputBox{
+    margin: 0 auto;
+    width: 400px;
+    height: 30px;
+}
+
+.TextGroup{
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 25px;
+}
+
+.ButtonsGroup{
+    margin: 0 auto;
+}

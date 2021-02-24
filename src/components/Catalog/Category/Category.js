@@ -6,12 +6,20 @@ import style from './Category.module.css';
 
 const Category = (props) => {
 
-  let select = ""; 
+  let checkBoxArgs = [];
+
   let changeHandler = (e) => {
-    if(select == ""){
-      select = `WHERE \`type\` = '${e.target.value}'`;
-    } else select+= ` OR type = '${e.target.value}'`;
-    const value = select;
+    let sql = ""; 
+    if(e.target.checked){
+      checkBoxArgs.push(e.target.value);
+    } else {checkBoxArgs.splice(checkBoxArgs.indexOf(e.target.value), 1)};
+    for(let i = 0; i < checkBoxArgs.length; i++){
+      console.log(checkBoxArgs[i]); 
+      if(i == 0) sql+= `WHERE \`type\` = '${checkBoxArgs[i]}'`
+      else sql+= ` OR \`type\` = '${checkBoxArgs[i]}'`
+    }
+    const value = sql;
+    console.log(sql);
     props.getTypes(value);
   }
 

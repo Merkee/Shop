@@ -1,8 +1,10 @@
 import style from './Header.module.css';
 
 import { NavLink } from 'react-router-dom';
+import Auth from '../Auth/Auth';
 
 const Header = () => {
+  let auth = false;
     return (
       <header className={style.Header}>
         <nav className={style.Nav}>
@@ -18,11 +20,16 @@ const Header = () => {
             <div className={style.MenuLogg}>
               <ul className={style.Logg}>
                 <li className={style.Cart} activeClassName={style.active}><NavLink to="/Cart">Корзина</NavLink></li>
-                <li><NavLink to="/LogIn" activeClassName={style.active}>Вход</NavLink></li>
+                <Auth/>
+                {/*<li><a activeClassName={style.active} onClick={() => {auth = !auth; console.log(auth)}}>Вход</a></li>*/}
+                {/*<li><Auth/></li>*/}
               </ul>
             </div>
           </div>
         </nav>
+        {auth == true &&
+        <div>HI</div>
+        }
       </header>
     )
 }
