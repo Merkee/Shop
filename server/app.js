@@ -42,7 +42,6 @@ app.get('/selectProducts', async (req, res, next) => {
 app.post('/getSearch', async (req, res) => {
   const search = req.body.search;
   let productData = {};
-
   productData.arr = () => {
     return new Promise((resolve, reject) => {
       connection.query('SELECT `id`, `name`, `image`, `cost`, `discount` FROM `products` WHERE `name` LIKE \'%' + search + '%\'', (err, rows) => {

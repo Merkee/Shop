@@ -1,0 +1,74 @@
+.SignIn{
+    margin: auto;
+    padding: 40px;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 300px;
+    height: 300px;
+    display: grid;
+}
+
+.SignUp{
+    margin: auto;
+    padding: 40px;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 300px;
+    height: 420px;
+}
+
+.NoAcc{
+    font-size: 16pt;
+    text-align: center;
+    text-transform: none;
+}
+
+.LogForm{
+    padding: 20px 0px;
+    display: grid;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+.RegForm{
+    padding: 20px 0px;
+    display: grid;
+}
+
+.Title{
+    text-align: center;
+    font-size: 25pt;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+.TextBox{
+    font-size: 18pt;
+    margin: 5px 0;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(231, 231, 231);
+}
+
+.Buttons{
+    font-size: 20pt;
+    margin: 5px 0;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(201, 188, 115);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.Buttons:hover{
+    background-color: rgb(219, 205, 127);
+}

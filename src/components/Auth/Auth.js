@@ -1,28 +1,18 @@
 import { Component, useEffect, useState } from 'react';
 import style from './Auth.module.css';
-import SignIn from './SignIn/SignIn';
+import AuthForm from './AuthForm/AuthForm';
 
-class Auth extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {showSignIn: false};
-        this.handleToggleClick = this.handleToggleClick.bind(this);
-    }
 
-    handleToggleClick(){
-        this.setState(state => ({
-            showAuth: !state.showSignIn
-        }));
-    }
+const Auth = () => {
+    const [showSignIn, setShowSignIn] = useState(false);
+    const [showSignUp, setShowSignUp] = useState(false);
 
-    render() {
-        return (
-            <li>
-                <SignIn signIn={this.state.showAuth}/>
-                <a onClick={this.handleToggleClick}>Войти</a>
-            </li>
-        );
-    }
+    return(
+        <li>
+            <AuthForm signIn={showSignIn} signUp={showSignUp} setSignUp={setShowSignUp}/>
+            <a className={style.AuthButton} onClick={() => {setShowSignIn(!showSignIn); setShowSignUp(false);}}>Войти</a>
+        </li>
+    );
 }
 
 export default Auth;
