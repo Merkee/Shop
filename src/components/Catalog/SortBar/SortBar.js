@@ -1,12 +1,9 @@
 import style from './SortBar.module.css';
 
-import React, {useState} from 'react';
 import { getSearch } from '../../../redux/actions';
 import { connect } from 'react-redux';
 
 const SortBar = (props) => {
-    /*dispatch(getAllProducts())*/
-    //(e) => {setSearch(e.target.value); dispatch(getSearch(search))}
     const changeHandler = (e) => {
         const value = e.target.value;
         props.getSearch(value);

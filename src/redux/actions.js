@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ALL, GET_SEARCH, GET_TYPES, INIT } from "./types";
+import { GET_ALL, GET_SEARCH, GET_TYPES, INIT, USER_SIGNIN } from "./types";
 
 export const initProducts = () => {
   return async dispatch => {
@@ -23,6 +23,16 @@ export const getTypes = (reqTypes) => {
       types: reqTypes
     });
     dispatch({type: GET_TYPES, payload: response.data});
+  }
+}
+
+export const userSignIn = (reqUsername, reqPassword) => {
+  return async dispatch => {
+    const response = await axios.post("/userSignIn", {
+      username: reqUsername,
+      password: reqPassword
+    });
+    dispatch({type: USER_SIGNIN, payload: response.data});
   }
 }
 

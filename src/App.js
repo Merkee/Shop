@@ -1,4 +1,3 @@
-import logo from './logo_gasp.png';
 import './App.css';
 
 import React from 'react';

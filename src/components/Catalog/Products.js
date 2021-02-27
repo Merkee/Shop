@@ -1,6 +1,6 @@
-import { useCallback, useEffect } from "react";
-import {connect, useDispatch, useSelector } from "react-redux"
-import { getAllProducts, initProducts } from "../../redux/actions";
+import { useEffect } from "react";
+import { connect } from "react-redux"
+import { initProducts } from "../../redux/actions";
 import ProductFrame from "./ProductFrame/ProductFrame"
 
 const Products = ({initProducts, productsData}) => {

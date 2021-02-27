@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from 'react';
+import { useState } from 'react';
 import style from './Auth.module.css';
 import AuthForm from './AuthForm/AuthForm';
 
@@ -9,7 +9,7 @@ const Auth = () => {
 
     return(
         <li>
-            <AuthForm signIn={showSignIn} signUp={showSignUp} setSignUp={setShowSignUp}/>
+            <AuthForm signIn={showSignIn} setSignIn={setShowSignIn} signUp={showSignUp} setSignUp={setShowSignUp}/>
             <a className={style.AuthButton} onClick={() => {setShowSignIn(!showSignIn); setShowSignUp(false);}}>Войти</a>
         </li>
     );

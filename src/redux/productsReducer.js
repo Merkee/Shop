@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import { GET_ALL, GET_SEARCH, GET_TYPES, INIT } from "./types";
 
 const initialState = {
