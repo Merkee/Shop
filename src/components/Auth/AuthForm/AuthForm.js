@@ -22,8 +22,14 @@ const AuthForm = (props) => {
     useEffect(() => {
         setShowSignIn(props.signIn);
         setShowSignUp(props.signUp);
-        setLogged(props.appData.users);
     });
+
+    useEffect(() => {
+        if (props.appData.users != []) {
+            setLogged(props.appData.users);
+            console.log(logged);
+        }
+    }, [props.appData.users]);
 
     const regClickHandler = () => {
         axios.post("/userSignUp", {
@@ -41,7 +47,6 @@ const AuthForm = (props) => {
 
     const logClickHandler = () => {
         props.userSignIn(username, password);
-        console.log(logged);
     }
 
     if(!showSignIn){
