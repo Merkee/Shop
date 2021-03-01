@@ -108,6 +108,19 @@ app.post('/userSignIn', async (req, res) => {
   res.json(result);
 });
 
+app.post('/userUpdateInfo', async (req, res) => {
+  const id = req.body.id;
+  const password = req.body.password;
+  const email = req.body.email;
+  const name = req.body.name;
+  const sourname = req.body.sourname;
+  const address = req.body.address;
+  const phone = req.body.phone;
+
+  /*UPDATE goods SET title = "утюг", price = 300 WHERE num = 2*/
+  connection.query(`UPDATE \`users\` SET \`password\` = '${password}', \`email\` = '${email}', \`name\` = '${name}', \`sourname\` = '${sourname}', \`address\` = '${address}', \`phone\` = '${phone}' WHERE \`id\` = ${id}`);
+});
+
 //res.send(res.json(result));
 
 app.listen(4000, () => {

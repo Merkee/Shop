@@ -1,3 +1,7 @@
 .AuthButton{
     cursor: pointer;
 }
+
+a.active {
+    color: rgb(201, 188, 115);
+}

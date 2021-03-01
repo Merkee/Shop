@@ -1,0 +1,7 @@
+.Profile{
+    margin: 25px 0;
+    font-family: 'Spectral', serif;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-gap: 20px;
+}

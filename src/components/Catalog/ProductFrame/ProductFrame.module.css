@@ -3,7 +3,7 @@
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
   display: grid;
-  grid-template-rows: 3fr 2fr 1fr;
+  grid-template-rows: 3fr 2fr 1fr 1fr;
   font-family: 'Spectral', serif;
 }
 
@@ -38,4 +38,36 @@ p.Cost{
   height: 150px;
   background-color: rgb(236, 236, 236);
   border-radius: 5px;
+}
+
+.ControlGroup{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.CountBox{
+  padding: 0 10px;
+  font-size: 14pt;
+  min-width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(231, 231, 231);
+}
+
+.BuyButton{
+  font-size: 14pt;
+  height: 30px;
+  margin: 0 10px;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(201, 188, 115);
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.BuyButton:hover{
+  background-color: rgb(219, 205, 127);
 }

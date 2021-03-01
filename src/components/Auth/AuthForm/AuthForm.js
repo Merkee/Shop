@@ -9,6 +9,7 @@ const AuthForm = (props) => {
     //let show = props.signIn;
     const [showSignIn, setShowSignIn] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
+    const [logMsg, setLogMsg] = useState("");
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -22,14 +23,10 @@ const AuthForm = (props) => {
     useEffect(() => {
         setShowSignIn(props.signIn);
         setShowSignUp(props.signUp);
-    });
-
-    useEffect(() => {
-        if (props.appData.users != []) {
-            setLogged(props.appData.users);
-            console.log(logged);
+        if(props.appData.users.length != 0){
+            props.setSignIn(false);
         }
-    }, [props.appData.users]);
+    });
 
     const regClickHandler = () => {
         axios.post("/userSignUp", {
@@ -42,11 +39,14 @@ const AuthForm = (props) => {
             phone: phone
         });
         
+        setLogMsg("Аккаунт успешно зарегистрирован, авторизируйтесь.");
+
         props.setSignUp(false);
     }
 
     const logClickHandler = () => {
-        props.userSignIn(username, password);
+        props.userSignIn(username, password);  
+
     }
 
     if(!showSignIn){
@@ -75,9 +75,14 @@ const AuthForm = (props) => {
             <div className={style.SignIn} onClick={(e) => e.stopPropagation()}>
                 <div className={style.Title}>Вход</div>
                 <div className={style.LogForm}>
+                {/*logMsg != "" &&
+                    <div>
+                        {logMsg}
+                    </div>
+                */}
                     <input className={style.TextBox} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Логин"/>
                     <input className={style.TextBox} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Пароль"/>
-                    <button onClick={logClickHandler} className={style.Buttons}>Войти</button>
+                    <button onClick={() => logClickHandler()} className={style.Buttons}>Войти</button>
                 </div>
                 <div className={style.RegForm}>
                     <div className={style.NoAcc}>Нет аккаунта?</div>
