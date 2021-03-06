@@ -1,6 +1,7 @@
 import style from './Header.module.css';
 
 import { NavLink } from 'react-router-dom';
+import Cart from '../Cart/Cart';
 import Auth from '../Auth/Auth';
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
             </div>
             <div className={style.MenuLogg}>
               <ul className={style.Logg}>
-                <li className={style.Cart} activeClassName={style.active}><NavLink to="/Cart">Корзина</NavLink></li>
+                <Cart/>
                 <Auth/>
                 {/*<li><a activeClassName={style.active} onClick={() => {auth = !auth; console.log(auth)}}>Вход</a></li>*/}
                 {/*<li><Auth/></li>*/}

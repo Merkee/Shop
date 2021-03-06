@@ -4,10 +4,10 @@ const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  database: "shop",
-  password: "root"
+  host: "18.208.136.162", //18.208.136.162
+  user: "mercen", //rxn
+  database: "mercen", //mercen
+  password: "hugoze25" //hugoze25
 });
 
 /*app.get('/hello', (req, res, next) => {
@@ -21,12 +21,13 @@ const connection = mysql.createConnection({
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/selectProducts', async (req, res, next) => {
+app.post('/selectProducts', async (req, res, next) => {
+  const params = req.body.params;
   let productData = {};
 
   productData.arr = () => {
     return new Promise((resolve, reject) => {
-      connection.query('SELECT `id`, `name`, `image`, `cost`, `discount` FROM `products`', (err, rows) => {
+      connection.query(`SELECT \`id\`, \`name\`, \`image\`, \`cost\`, \`discount\` FROM \`products\` WHERE ${params}`, (err, rows) => {
         if(err) {
           return(reject);
         } else {
@@ -37,6 +38,64 @@ app.get('/selectProducts', async (req, res, next) => {
   }
   let result = await productData.arr();
   res.json(result);
+});
+
+app.post('/selectOrders', async (req, res, next) => {
+  const user = req.body.user;
+  let productData = {};
+
+  productData.arr = () => {
+    return new Promise((resolve, reject) => {
+      connection.query(`SELECT p.name, p.image, c.id, c.time, c.count, (c.count * (p.cost - p.cost*(p.discount/100))) AS cost FROM products p, cart c WHERE p.id = c.product_id AND c.user_id = ${user} ORDER BY c.id DESC`, (err, rows) => {
+        if(err) {
+          return(reject);
+        } else {
+          return resolve(rows);
+        }
+      });
+    })
+  }
+  let result = await productData.arr();
+  res.json(result);
+});
+
+app.post('/selectSum', async (req, res, next) => {
+  const user = req.body.user;
+  let allCost = {};
+
+  allCost.arr = () => {
+    return new Promise((resolve, reject) => {
+      connection.query(`SELECT SUM(c.count * (p.cost - p.cost*(p.discount/100))) as all_cost FROM \`cart\` c, \`products\` p WHERE c.product_id = p.id AND c.user_id = ${user}`, (err, rows) => {
+        if(err) {
+          return(reject);
+        } else {
+          return resolve(rows);
+        }
+      });
+    })
+  }
+  let result = await allCost.arr();
+  res.json(result);
+});
+/*SELECT p.name, p.image, c.id, c.time, c.count, (c.count * (p.cost - p.cost*(p.discount/100))) AS all_cost FROM products p, cart c WHERE p.id = c.product_id*/
+app.post('/productsToCart', async (req, res) => {
+  const userid = req.body.userid;
+  const productid = req.body.productid;
+  const count = req.body.count;
+
+  connection.query(`INSERT INTO \`cart\` (\`id\`, \`user_id\`, \`product_id\`, \`count\`, \`time\`) VALUES (NULL, '${userid}', '${productid}', '${count}', CURRENT_DATE());`);
+});
+
+app.post('/productsToBuy', async (req, res) => {
+  const user = req.body.user;
+
+  connection.query(`DELETE FROM \`cart\` WHERE user_id = '${user};'`);
+});
+
+app.post('/removeOffer', async (req, res) => {
+  const id = req.body.id;
+
+  connection.query(`DELETE FROM \`cart\` WHERE id = '${id}';`);
 });
 
 app.post('/getSearch', async (req, res) => {

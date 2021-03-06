@@ -1,0 +1,49 @@
+.UserCart{
+    margin: 25px 0;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    grid-gap: 20px;
+    font-family: 'Spectral', serif;
+}
+
+.CartBar{
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 16pt;
+    display: grid;
+    grid-template-columns: 7fr 2fr;
+}
+
+.TotalCost{
+    display: flex;
+    align-items: center;
+}
+
+.BuyButton{
+    font-size: 16pt;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(201, 188, 115);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.BuyButton:hover{
+    background-color: rgb(219, 205, 127);
+}
+
+.ProductCart{
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.CartEmpty{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+}

@@ -17,7 +17,7 @@ const ProfileImage = () => {
     return(
       <div className={style.ProfileImage}>
           <img src={imgProfile} className={style.ImageIcon}/>
-          <button className={style.UpdateButton} onClick={() => clickHandler()}>Сменить фото</button>
+          {/*<button className={style.UpdateButton} onClick={() => clickHandler()}>Сменить фото</button>*/}
       </div>
     );
 }

@@ -12,6 +12,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import TitleBlock from './components/TitleBlock/TitleBlock';
 import LogIn from './components/LogIn/LogIn';
 import Profile from './components/Profile/Profile';
+import UserCart from './components/Cart/UserCart/UserCart';
 
 const App = (props) => {
   return (
@@ -37,6 +38,9 @@ const App = (props) => {
           </Route>
           <Route path="/Profile">
             <Profile/>
+          </Route>
+          <Route path="/Cart">
+            <UserCart/>
           </Route>
         </div>
         <Footer/>

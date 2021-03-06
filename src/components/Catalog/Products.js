@@ -1,15 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux"
 import { initProducts } from "../../redux/actions";
-import ProductFrame from "./ProductFrame/ProductFrame"
+import ProductFrame from "./ProductFrame/ProductFrame";
+import ProductsLoader from "./ProductsLoader";
 
-const Products = ({initProducts, productsData}) => {
-    useEffect(() => {initProducts()}, [initProducts]);
-    const products = productsData.products;
-    if(!products.length){
-        return <p>Продукция не найдена.</p>
-    }
-    return products.map( p => <ProductFrame id={p.id} image={p.image} name={p.name} oldcost={(p.cost-(p.discount/100)).toFixed(2)} cost={p.cost}/>)
+const Products = (props) => {
+    useEffect(() => {
+        let sql = props.searchParams;
+        if(props.typeParams != "") sql+= ` AND ${props.typeParams}`;
+        sql+= ` ${props.filterParams}`;
+        props.initProducts(sql);
+    }, [props.typeParams, props.searchParams, props.filterParams]);
+
+    return <ProductsLoader/>
 }
 
 const mapStateToProps = (state) => state;

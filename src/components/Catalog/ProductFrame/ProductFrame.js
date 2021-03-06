@@ -1,19 +1,34 @@
+import axios from 'axios';
 import { useState } from 'react';
+import { connect } from 'react-redux';
 import style from './ProductFrame.module.css';
 
 const ProductFrame = (props) => {
 
   const [allCost, setAllCost] = useState(props.cost);
   const [allOldCost, setAllOldCost] = useState(props.oldcost);
+  const [count, setCount] = useState(1);
 
   const costChangeHandler = (e) => {
     if(e.target.value != ""){
       setAllCost((props.cost * e.target.value).toFixed(2));
       setAllOldCost((props.oldcost * e.target.value).toFixed(2))
+      setCount(e.target.value);
     } else {
       setAllCost(props.cost);
       setAllOldCost(props.oldcost);
+      setCount(1);
     }
+  }
+
+  const clickBuyHandler = () => {
+    if(props.appData.users.length != 0){
+      axios.post("/productsToCart", {
+        userid: props.appData.users[0].id,
+        productid: props.id,
+        count: count
+    });
+    } else alert("Authorize");
   }
 
     return(
@@ -28,10 +43,12 @@ const ProductFrame = (props) => {
         </p>
         <div className={style.ControlGroup}>
           <input type="text" className={style.CountBox} onChange={(e) => costChangeHandler(e)}/>
-          <button className={style.BuyButton} value={props.id}>купить</button>
+          <button className={style.BuyButton} value={props.id} onClick={() => clickBuyHandler()}>купить</button>
         </div>
       </div>
     );
 }
 
-export default ProductFrame;
+const mapStateToProps = (state) => state;
+
+export default connect(mapStateToProps, null)(ProductFrame);

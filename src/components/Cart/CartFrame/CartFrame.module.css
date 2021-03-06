@@ -1,0 +1,65 @@
+.CartFrame{
+    display: grid;
+    grid-template-columns: 1fr 2fr 10fr 3fr 3fr 1fr;
+    font-size: 14pt;
+    padding: 20px 0;
+    border: 1px solid rgb(206, 206, 206);
+    border-width: 1px 0;
+}
+
+.NameAndTime{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+/*.OrderImage{
+    margin: 25px 0;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}*/
+
+.CartFrame img{
+    /*display: block;
+    margin: auto;*/
+    width: 150px;
+    height: 150px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px;
+}
+
+.OrderID{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.OrderName{
+    font-size: 18pt;
+}
+
+.OrderCount{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.OrderCost{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.DelButton{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: rgb(201, 188, 115);
+    color: white;
+    border: none;
+}
+
+.DelButton:hover{
+    background-color: rgb(219, 205, 127);
+}
