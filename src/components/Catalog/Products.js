@@ -12,7 +12,7 @@ const Products = (props) => {
         props.initProducts(sql);
     }, [props.typeParams, props.searchParams, props.filterParams]);
 
-    return <ProductsLoader/>
+    return <ProductsLoader showSignIn={props.showSignIn} setShowSignIn={props.setShowSignIn} showSignUp={props.showSignUp} setShowSignUp={props.setShowSignUp}/>
 }
 
 const mapStateToProps = (state) => state;

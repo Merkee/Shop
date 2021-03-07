@@ -6,8 +6,6 @@ import { NavLink } from 'react-router-dom';
 
 
 const Auth = (props) => {
-    const [showSignIn, setShowSignIn] = useState(false);
-    const [showSignUp, setShowSignUp] = useState(false);
 
     return(
         <li>
@@ -15,9 +13,9 @@ const Auth = (props) => {
                 <NavLink to="/Profile" activeClassName={style.active}>Профиль</NavLink>
             }
             {props.appData.users.length == 0 &&
-                <a className={style.AuthButton} onClick={() => {setShowSignIn(!showSignIn); setShowSignUp(false);}}>Войти</a>
+                <a className={style.AuthButton} onClick={() => {props.setShowSignIn(!props.showSignIn); props.setShowSignUp(false);}}>Войти</a>
             }
-            <AuthForm signIn={showSignIn} setSignIn={setShowSignIn} signUp={showSignUp} setSignUp={setShowSignUp}/>
+            <AuthForm signIn={props.showSignIn} setSignIn={props.setShowSignIn} signUp={props.showSignUp} setSignUp={props.setShowSignUp}/>
         </li>
     );
 }

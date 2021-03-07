@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/selectProducts', async (req, res, next) => {
   const params = req.body.params;
   let productData = {};
-
+  
   productData.arr = () => {
     return new Promise((resolve, reject) => {
       connection.query(`SELECT \`id\`, \`name\`, \`image\`, \`cost\`, \`discount\` FROM \`products\` WHERE ${params}`, (err, rows) => {
@@ -82,14 +82,13 @@ app.post('/productsToCart', async (req, res) => {
   const userid = req.body.userid;
   const productid = req.body.productid;
   const count = req.body.count;
-
   connection.query(`INSERT INTO \`cart\` (\`id\`, \`user_id\`, \`product_id\`, \`count\`, \`time\`) VALUES (NULL, '${userid}', '${productid}', '${count}', CURRENT_DATE());`);
 });
 
 app.post('/productsToBuy', async (req, res) => {
   const user = req.body.user;
 
-  connection.query(`DELETE FROM \`cart\` WHERE user_id = '${user};'`);
+  connection.query(`DELETE FROM \`cart\` WHERE user_id = '${user}';`);
 });
 
 app.post('/removeOffer', async (req, res) => {

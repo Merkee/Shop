@@ -11,7 +11,6 @@ const CartFrame = (props) => {
 
     return(
       <div className={style.CartFrame}>
-          <div className={style.OrderID}>{props.id}</div>
           <div className={style.OrderImage}>
               <img src={"data:image/png;base64," + btoa(new Uint8Array(props.image.data).reduce((data, byte) => data + String.fromCharCode(byte), ''))}/>
           </div>

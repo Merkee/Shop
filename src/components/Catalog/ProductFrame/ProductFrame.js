@@ -1,9 +1,11 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import style from './ProductFrame.module.css';
 
 const ProductFrame = (props) => {
+
+  useEffect(() => setAllCost(props.cost), [props.cost]);
 
   const [allCost, setAllCost] = useState(props.cost);
   const [allOldCost, setAllOldCost] = useState(props.oldcost);
@@ -28,7 +30,10 @@ const ProductFrame = (props) => {
         productid: props.id,
         count: count
     });
-    } else alert("Authorize");
+    } else {
+      props.setShowSignIn(!props.showSignIn); 
+      props.setShowSignUp(false);
+    }
   }
 
     return(
@@ -42,7 +47,7 @@ const ProductFrame = (props) => {
           <span> {allCost} р.</span>
         </p>
         <div className={style.ControlGroup}>
-          <input type="text" className={style.CountBox} onChange={(e) => costChangeHandler(e)}/>
+          <input type="text" placeholder="1 шт." className={style.CountBox} onChange={(e) => costChangeHandler(e)}/>
           <button className={style.BuyButton} value={props.id} onClick={() => clickBuyHandler()}>купить</button>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import Auth from '../Auth/Auth';
 
-const Header = () => {
+const Header = (props) => {
   let auth = false;
     return (
       <header className={style.Header}>
@@ -21,7 +21,7 @@ const Header = () => {
             <div className={style.MenuLogg}>
               <ul className={style.Logg}>
                 <Cart/>
-                <Auth/>
+                <Auth showSignIn={props.showSignIn} setShowSignIn={props.setShowSignIn} showSignUp={props.showSignUp} setShowSignUp={props.setShowSignUp}/>
                 {/*<li><a activeClassName={style.active} onClick={() => {auth = !auth; console.log(auth)}}>Вход</a></li>*/}
                 {/*<li><Auth/></li>*/}
               </ul>

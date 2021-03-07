@@ -1,6 +1,7 @@
 .CartFrame{
     display: grid;
-    grid-template-columns: 1fr 2fr 10fr 3fr 3fr 1fr;
+    grid-template-columns: 2fr 10fr 3fr 3fr 1fr;
+    grid-gap: 30px;
     font-size: 14pt;
     padding: 20px 0;
     border: 1px solid rgb(206, 206, 206);
@@ -10,7 +11,6 @@
 .NameAndTime{
     display: flex;
     align-items: center;
-    margin: auto;
 }
 /*.OrderImage{
     margin: 25px 0;

@@ -14,7 +14,7 @@ const Catalog = (props) => {
         <SortBar searchParams={setSearchParams} filterParams={setFilterParams}/>
         <Category typeParams={setTypeParams}/>
         <div className={style.Products}>
-          <Products typeParams={typeParams} searchParams={searchParams} filterParams={filterParams}/>
+          <Products typeParams={typeParams} searchParams={searchParams} filterParams={filterParams} showSignIn={props.showSignIn} setShowSignIn={props.setShowSignIn} showSignUp={props.showSignUp} setShowSignUp={props.setShowSignUp}/>
         </div>
       </div>
     );

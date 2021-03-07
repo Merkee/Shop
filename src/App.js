@@ -1,6 +1,6 @@
 import './App.css';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 import Header from './components/Header/Header';
@@ -15,17 +15,21 @@ import Profile from './components/Profile/Profile';
 import UserCart from './components/Cart/UserCart/UserCart';
 
 const App = (props) => {
+
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false);
+
   return (
     <BrowserRouter>
       <div className="App">
         <TitleBlock/>
-        <Header/>
+        <Header showSignIn={showSignIn} setShowSignIn={setShowSignIn} showSignUp={showSignUp} setShowSignUp={setShowSignUp}/>
         <div className="Content">
           <Route path="/Main">
             <Main/>
           </Route>
           <Route path="/Catalog">
-            <Catalog/>
+            <Catalog showSignIn={showSignIn} setShowSignIn={setShowSignIn} showSignUp={showSignUp} setShowSignUp={setShowSignUp}/>
           </Route>
           <Route path="/Contacts">
             <Contacts/>
