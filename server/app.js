@@ -83,55 +83,21 @@ app.post('/productsToCart', async (req, res) => {
   const productid = req.body.productid;
   const count = req.body.count;
   connection.query(`INSERT INTO \`cart\` (\`id\`, \`user_id\`, \`product_id\`, \`count\`, \`time\`) VALUES (NULL, '${userid}', '${productid}', '${count}', CURRENT_DATE());`);
+  res.send();
 });
 
 app.post('/productsToBuy', async (req, res) => {
   const user = req.body.user;
 
   connection.query(`DELETE FROM \`cart\` WHERE user_id = '${user}';`);
+  res.send();
 });
 
 app.post('/removeOffer', async (req, res) => {
   const id = req.body.id;
 
   connection.query(`DELETE FROM \`cart\` WHERE id = '${id}';`);
-});
-
-app.post('/getSearch', async (req, res) => {
-  const search = req.body.search;
-  let productData = {};
-  productData.arr = () => {
-    return new Promise((resolve, reject) => {
-      connection.query('SELECT `id`, `name`, `image`, `cost`, `discount` FROM `products` WHERE `name` LIKE \'%' + search + '%\'', (err, rows) => {
-        if(err) {
-          return(reject);
-        } else {
-          return resolve(rows);
-        }
-      });
-    })
-  }
-  let result = await productData.arr();
-  res.json(result);
-});
-
-app.post('/getTypes', async (req, res) => {
-  const types = req.body.types;
-  let productData = {};
-
-  productData.arr = () => {
-    return new Promise((resolve, reject) => {
-      connection.query('SELECT `id`, `name`, `image`, `cost`, `discount` FROM `products` ' + types, (err, rows) => {
-        if(err) {
-          return(reject);
-        } else {
-          return resolve(rows);
-        }
-      });
-    })
-  }
-  let result = await productData.arr();
-  res.json(result);
+  res.send();
 });
 
 app.post('/userSignUp', async (req, res) => {
@@ -144,6 +110,7 @@ app.post('/userSignUp', async (req, res) => {
   const phone = req.body.phone;
 
   connection.query(`INSERT INTO \`users\` (\`id\`, \`username\`, \`password\`, \`email\`, \`name\`, \`sourname\`, \`address\`, \`phone\`) VALUES (NULL, '${username}', '${password}', '${email}', '${name}', '${sourname}', '${address}', '${phone}');`);
+  res.send();
 });
 
 app.post('/userSignIn', async (req, res) => {
@@ -177,6 +144,7 @@ app.post('/userUpdateInfo', async (req, res) => {
 
   /*UPDATE goods SET title = "утюг", price = 300 WHERE num = 2*/
   connection.query(`UPDATE \`users\` SET \`password\` = '${password}', \`email\` = '${email}', \`name\` = '${name}', \`sourname\` = '${sourname}', \`address\` = '${address}', \`phone\` = '${phone}' WHERE \`id\` = ${id}`);
+  res.send();
 });
 
 //res.send(res.json(result));

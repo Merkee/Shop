@@ -1,8 +1,5 @@
 import style from './SortBar.module.css';
 
-import { getSearch } from '../../../redux/actions';
-import { connect } from 'react-redux';
-
 const SortBar = (props) => {
     const changeSearchHandler = (e) => {
         props.searchParams(`\`name\` LIKE '%${e.target.value}%'`);
@@ -26,6 +23,4 @@ const SortBar = (props) => {
     );
 }
 
-const mapDispatchToProps = {getSearch};
-
-export default connect(null, mapDispatchToProps)(SortBar);
+export default SortBar;

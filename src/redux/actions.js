@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ALL, GET_ALL_COST, GET_SEARCH, GET_TYPES, INIT, LOAD_ORDERS, USER_SIGNIN } from "./types";
+import { GET_ALL, GET_ALL_COST, INIT, LOAD_ORDERS, USER_SIGNIN } from "./types";
 
 export const initProducts = (reqParams) => {
   return async dispatch => {
@@ -28,24 +28,6 @@ export const getAllCost = (reqUser) => {
   }
 }
 
-export const getSearch = (reqSearch) => {
-  return async dispatch => {
-    const response = await axios.post("/getSearch", {
-      search: reqSearch
-    });
-    dispatch({type: GET_SEARCH, payload: response.data});
-  }
-}
-
-export const getTypes = (reqTypes) => {
-  return async dispatch => {
-    const response = await axios.post("/getTypes", {
-      types: reqTypes
-    });
-    dispatch({type: GET_TYPES, payload: response.data});
-  }
-}
-
 export const userSignIn = (reqUsername, reqPassword) => {
   return async dispatch => {
     const response = await axios.post("/userSignIn", {
@@ -56,13 +38,13 @@ export const userSignIn = (reqUsername, reqPassword) => {
   }
 }
 
-export const getAllProducts = () => {
+/*export const getAllProducts = () => {
     return async dispatch => {
       const response = await fetch("/selectProducts");
       const json = await response.json();
       dispatch({type: GET_ALL, payload: json});
     }
-}
+}*/
 
 /*const fetchAllProducts = (dispatch) => {
     return fetch("/selectProducts")

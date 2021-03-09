@@ -1,0 +1,29 @@
+.Discount{
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    grid-area: d;
+    display: grid;
+    grid-template-areas:
+    "t i"
+    "d i";
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 5fr 1fr;
+    grid-gap: 20px;
+}
+
+.Description{
+    grid-area: d;
+    font-size: 12pt;
+}
+
+.Title{
+    grid-area: t;
+    font-size: 16pt;
+}
+
+.Discount img{
+    width: 150px;
+    height: 150px;
+    grid-area: i;
+}

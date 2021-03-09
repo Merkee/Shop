@@ -7,10 +7,10 @@ import thunk from 'redux-thunk';
 import { applyMiddleware, createStore } from 'redux';
 import { rootReducer } from './redux/rootReducer';
 import { Provider } from 'react-redux';
-import { initProducts } from './redux/actions';
+//import { initProducts } from './redux/actions';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
-store.dispatch(initProducts());
+//store.dispatch(initProducts());
 const app = (
   <Provider store={store}>
     <App/>

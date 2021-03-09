@@ -7,17 +7,19 @@ import axios from 'axios';
 
 const UserCart = (props) => {
 
-  useEffect(() => props.loadOrders(props.appData.users[0].id), [props.productsData.orders]);
-  useEffect(() => props.loadOrders(props.appData.users[0].id), [props.loadOrders]);
-  useEffect(() => props.getAllCost(props.appData.users[0].id), [props.productsData.orders]);
+  useEffect(() => {
+    props.loadOrders(props.appData.users[0].id);
+    props.getAllCost(props.appData.users[0].id);
+    console.log(props.productsData.orders);
+  }, []);
 
   const clickBuyHandler = () => {
     axios.post("/productsToBuy", {
       user: props.appData.users[0].id
     });
+    props.loadOrders(props.appData.users[0].id);
+    props.getAllCost(props.appData.users[0].id);
   }
-
-  const orders = props.productsData.orders;
 
     return(
       <div className={style.UserCart}>
@@ -33,8 +35,8 @@ const UserCart = (props) => {
             <div className={style.Row}>Стоимость</div>
             <div className={style.Row}></div>
           </div>
-          {orders.length == 0 && <div className={style.CartEmpty}>В корзине нет заказов</div>}
-          {orders.map( p => <CartFrame id={p.id} image={p.image} name={p.name} time={new Date(p.time).toLocaleString('ru', 'dd.MM.yyyy').replace(/[\s,%]\s\d{2}:\d{2}:\d{2,4}$/, '')} count={p.count} cost={p.cost.toFixed(2)}/>)}
+          {props.productsData.orders.length == 0 && <div className={style.CartEmpty}>В корзине нет заказов</div>}
+          {props.productsData.orders.map( p => <CartFrame id={p.id} image={p.image} name={p.name} time={new Date(p.time).toLocaleString('ru', 'dd.MM.yyyy').replace(/[\s,%]\s\d{2}:\d{2}:\d{2,4}$/, '')} count={p.count} cost={p.cost.toFixed(2)}/>)}
         </div>
       </div>
     );

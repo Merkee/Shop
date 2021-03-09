@@ -1,4 +1,4 @@
-import { GET_ALL, GET_ALL_COST, GET_SEARCH, GET_TYPES, INIT, LOAD_ORDERS } from "./types";
+import { GET_ALL, GET_ALL_COST, INIT, LOAD_ORDERS } from "./types";
 
 const initialState = {
     products: [],
@@ -14,10 +14,6 @@ export const productReducer = (state = initialState, action) => {
             return {...state, orders: action.payload};
         case GET_ALL_COST:
             return {...state, sum: action.payload};
-        case GET_SEARCH:
-            return {...state, products: action.payload};
-        case GET_TYPES:
-            return {...state, products: action.payload};
         case GET_ALL:
             return {...state, products: action.payload};
         default: return state;

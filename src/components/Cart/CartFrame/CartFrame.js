@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { getAllCost, loadOrders } from '../../../redux/actions';
 import style from './CartFrame.module.css';
 
 const CartFrame = (props) => {
@@ -7,6 +9,8 @@ const CartFrame = (props) => {
         axios.post("/removeOffer", {
             id: props.id
         });
+        props.loadOrders(props.appData.users[0].id);
+        props.getAllCost(props.appData.users[0].id);
     }
 
     return(
@@ -27,4 +31,7 @@ const CartFrame = (props) => {
     );
 }
 
-export default CartFrame;
+const mapStateToProps = (state) => state;
+const mapDispatchToProps = {loadOrders, getAllCost}; 
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartFrame);

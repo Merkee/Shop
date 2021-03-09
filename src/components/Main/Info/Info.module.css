@@ -1,0 +1,24 @@
+.Info{
+    border-radius: 5px;
+    background: rgb(157,164,37);
+    background: linear-gradient(270deg, rgba(157,164,37,1) 0%, rgba(233,242,62,1) 51%, rgba(191,184,41,1) 100%);
+    padding: 25px;
+    grid-area: i;
+}
+
+.Description{
+    font-size: 16pt;
+    color: white;
+}
+
+.TextBlock{
+    border-radius: 5px;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.233);
+}
+
+.Title{
+    font-size: 18pt;
+    color: white;
+    font-weight: bolder;
+}

@@ -4,3 +4,13 @@
     font-family: 'Spectral', serif;
     margin: 25px 0;
 }
+
+.FloatBars{
+    display: grid;
+    grid-template-areas:
+    "i g"
+    "i d";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 20px;
+}

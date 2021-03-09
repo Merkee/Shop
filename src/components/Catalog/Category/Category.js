@@ -1,7 +1,3 @@
-import { useState } from 'react';
-import { connect } from 'react-redux';
-import { getTypes } from '../../../redux/actions';
-
 import style from './Category.module.css';
 
 const Category = (props) => {
@@ -36,6 +32,4 @@ const Category = (props) => {
     );
 }
 
-const mapDispatchToProps = {getTypes};
-
-export default connect(null, mapDispatchToProps)(Category);
+export default Category;
