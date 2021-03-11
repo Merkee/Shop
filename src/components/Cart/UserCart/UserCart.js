@@ -10,7 +10,6 @@ const UserCart = (props) => {
   useEffect(() => {
     props.loadOrders(props.appData.users[0].id);
     props.getAllCost(props.appData.users[0].id);
-    console.log(props.productsData.orders);
   }, []);
 
   const clickBuyHandler = () => {
@@ -25,7 +24,7 @@ const UserCart = (props) => {
       <div className={style.UserCart}>
         <div className={style.CartBar}>
           <div className={style.TotalCost}>Продукции в корзине на: {props.productsData.sum != 0 && props.productsData.sum[0].all_cost != null && props.productsData.sum[0].all_cost.toFixed(2) + " руб."} {props.productsData.sum != 0 && props.productsData.sum[0].all_cost == null && "0 руб."}</div>
-          <button className={style.BuyButton} onClick={() => clickBuyHandler()}>Купить</button>
+          <button className={style.BuyButton} onClick={() => clickBuyHandler()}>Оформить заказ</button>
         </div>
         <div className={style.ProductCart}>
           <div className={style.TableValues}>

@@ -10,14 +10,6 @@ const connection = mysql.createConnection({
   password: "hugoze25" //hugoze25
 });
 
-/*app.get('/hello', (req, res, next) => {
-  res.send('Step 1');
-  console.log('Step 1');
-  next();
-}, (req, res, next) => {
-  res.send('Step 2');
-  console.log('Step 2');
-});*/
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 

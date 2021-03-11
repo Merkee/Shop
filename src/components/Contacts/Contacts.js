@@ -19,14 +19,14 @@ let Contacts = () => {
                             <div className={style.TitlePhones}>Отдел сбыта</div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375292241357">+375292241357</a>
                             </div>
                         </li>
                         <li>
                             <div className={style.TitlePhones}>Отдел маркетинга</div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375772681238">+375772681238</a>
                             </div>
                         </li>
                         <li>
@@ -34,7 +34,7 @@ let Contacts = () => {
                             <div className={style.Description}>Стома Марина Вячеславовна</div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375172531437">+375172531437</a>
                             </div>
                         </li>
                         <li>
@@ -42,7 +42,7 @@ let Contacts = () => {
                             <div className={style.Description}>Феминист Анна Георгиевна</div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375112181637">+375112181637</a>
                             </div>
                         </li>
                         <li>
@@ -50,7 +50,7 @@ let Contacts = () => {
                             <div className={style.Description}>Сачевичик Анна Мечеславовна</div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375876285321">+375876285321</a>
                             </div>
                         </li>
                         <li>
@@ -58,7 +58,7 @@ let Contacts = () => {
                             <div className={style.Description}>Василевич Алла Григорьевна</div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375722241381">+375722241381</a>
                             </div>
                         </li>
                     </ul>                    
@@ -77,11 +77,11 @@ let Contacts = () => {
                                 </div>
                                 <div className={style.PhoneNums}>
                                     <img src={ph}/>
-                                    <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                    <a className={style.ItemPhones} href="tel:+375773286335">+375773286335</a>
                                 </div>
                                 <div className={style.PhoneNums}>
                                     <img src={ph}/>
-                                    <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                    <a className={style.ItemPhones} href="tel:+375112221237">+375112221237</a>
                                 </div>
                             </li>
                         </ul>
@@ -96,15 +96,15 @@ let Contacts = () => {
                             <div className={style.Description}>Телефоны для заказа продукции</div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375742251327">+375742251327</a>
                             </div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375272485631">+375272485631</a>
                             </div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375772287788">+375772287788</a>
                             </div>
                         </li>
                     </ul>
@@ -119,15 +119,15 @@ let Contacts = () => {
                             <div className={style.Description}>Телефоны отдела кадров</div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375372581434">+375372581434</a>
                             </div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375752271211">+375752271211</a>
                             </div>
                             <div className={style.PhoneNums}>
                                 <img src={ph}/>
-                                <a className={style.ItemPhones} href="tel:+375772281337">+375772281337</a>
+                                <a className={style.ItemPhones} href="tel:+375732251555">+375732251555</a>
                             </div>
                         </li>
                     </ul>

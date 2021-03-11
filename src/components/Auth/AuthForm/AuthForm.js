@@ -23,10 +23,13 @@ const AuthForm = (props) => {
     useEffect(() => {
         setShowSignIn(props.signIn);
         setShowSignUp(props.signUp);
+    });
+
+    useEffect(() => {
         if(props.appData.users.length != 0){
             props.setSignIn(false);
         }
-    });
+    }, [props.appData.users])
 
     const regClickHandler = () => {
         axios.post("/userSignUp", {
