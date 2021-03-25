@@ -1,13 +1,14 @@
 .Footer{
-    background-color: rgb(182, 178, 172);
+    background-color: rgb(69, 67, 62);
+    border-top: 2.5px solid rgb(201, 188, 115);
     height: 100px;
 }
   
 .Copyring{
-    color: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
     display: block;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
+    padding-top: 30px;
     text-align: center;
     font-family: 'Playfair Display', serif;
 }

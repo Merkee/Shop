@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react';
 import style from './Category.module.css';
 
 const Category = (props) => {
-  let checkBoxArgs = [];
+  const [checkBoxArgs] = useState([]);
 
   let changeHandler = (e) => {
+    console.log(checkBoxArgs);
     let sql = ""; 
     if(e.target.checked){
       checkBoxArgs.push(e.target.value);
@@ -13,6 +15,8 @@ const Category = (props) => {
       else sql+= ` OR \`type\` = '${checkBoxArgs[i]}'`
     }
     props.typeParams(sql);
+    console.log(sql);
+    console.log(checkBoxArgs);
   }
 
     return(

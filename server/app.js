@@ -133,6 +133,7 @@ app.post('/userUpdateInfo', async (req, res) => {
   const sourname = req.body.sourname;
   const address = req.body.address;
   const phone = req.body.phone;
+  console.log(req.body);
 
   /*UPDATE goods SET title = "утюг", price = 300 WHERE num = 2*/
   connection.query(`UPDATE \`users\` SET \`password\` = '${password}', \`email\` = '${email}', \`name\` = '${name}', \`sourname\` = '${sourname}', \`address\` = '${address}', \`phone\` = '${phone}' WHERE \`id\` = ${id}`);
