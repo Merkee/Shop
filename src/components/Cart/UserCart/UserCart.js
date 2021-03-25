@@ -14,7 +14,11 @@ const UserCart = (props) => {
 
   const clickBuyHandler = () => {
     axios.post("/productsToBuy", {
-      user: props.appData.users[0].id
+      user: props.appData.users[0].id,
+      name: `${props.appData.users[0].name} ${props.appData.users[0].sourname}`,
+      products: props.productsData.orders,
+      phone: props.appData.users[0].phone,
+      sum: props.productsData.sum[0].all_cost.toFixed(2)
     });
     props.loadOrders(props.appData.users[0].id);
     props.getAllCost(props.appData.users[0].id);

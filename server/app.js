@@ -2,6 +2,17 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+
+var transport = {
+  host: 'smtp.mail.ru', // e.g. smtp.gmail.com
+  auth: {
+    user: "shop.supply@mail.ru",
+    pass: "KMR9D~LO"
+  }
+}
+
+var transporter = nodemailer.createTransport(transport);
 
 const connection = mysql.createConnection({
   host: "18.208.136.162", //18.208.136.162
@@ -80,8 +91,43 @@ app.post('/productsToCart', async (req, res) => {
 
 app.post('/productsToBuy', async (req, res) => {
   const user = req.body.user;
+  const name = req.body.name;
+  const phone = req.body.phone;
+  const products = req.body.products;
+  const sum = req.body.sum;
+  const orders = `<h2>Номер заказчика ${phone}</h2> <h3>Перечень продукции:</h3> ${products.map( p => `${p.name} x ${p.count} - <strong>${p.cost.toFixed(2)} руб.</strong>`).join(", <br> ")} <h2>Сумма заказа ${sum} руб.</h2>`;
+  console.log(orders);
 
   connection.query(`DELETE FROM \`cart\` WHERE user_id = '${user}';`);
+
+  transporter.verify((error, success) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('All works fine, congratz!');
+    }
+  });
+
+  var mail = {
+    from: 'shop.supply@mail.ru',
+    to: 'shop.supply@mail.ru',  
+    subject: `Доставка для ${name}`,
+
+    html: orders
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: 'fail'
+      })
+    } else {
+      res.json({
+        msg: 'success'
+      })
+    }
+  });
+
   res.send();
 });
 
