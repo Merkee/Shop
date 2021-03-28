@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
-var transport = {
+let transport = {
   host: 'smtp.mail.ru', // e.g. smtp.gmail.com
   auth: {
     user: "shop.supply@mail.ru",
@@ -12,13 +12,13 @@ var transport = {
   }
 }
 
-var transporter = nodemailer.createTransport(transport);
+let transporter = nodemailer.createTransport(transport);
 
 const connection = mysql.createConnection({
-  host: "18.208.136.162", //18.208.136.162
-  user: "mercen", //rxn
+  host: "18.208.136.162", 
+  user: "mercen",
   database: "mercen", //mercen
-  password: "hugoze25" //hugoze25
+  password: "*************" 
 });
 
 app.use(express.json());
@@ -108,7 +108,7 @@ app.post('/productsToBuy', async (req, res) => {
     }
   });
 
-  var mail = {
+  let mail = {
     from: 'shop.supply@mail.ru',
     to: 'shop.supply@mail.ru',  
     subject: `Доставка для ${name}`,
